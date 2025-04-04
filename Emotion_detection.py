@@ -72,8 +72,8 @@ def diasum(ckpt, dialogue):
 
 def BARTsum(text):
     summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
-    summary_output = summarizer(text, max_length=50, min_length=30, do_sample=False)
+    summary_output = summarizer(text, max_length=130, min_length=30, do_sample=False)
     summary = summary_output[0]['summary_text']
-
+    print(summary)
     return summary
 
