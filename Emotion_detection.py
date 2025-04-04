@@ -65,14 +65,14 @@ def diasum(ckpt, dialogue):
     input_ids = tokenizer(dialogue, truncation=True, padding='max_length', max_length=512, return_tensors= "pt")
     input_ids.to("cuda")
     model.to("cuda")
-    output_ids = model.generate(**input_ids, max_length = 70)
+    output_ids = model.generate(**input_ids, max_length = 50)
     summary = tokenizer.decode(output_ids[0], skip_special_tokens=True)
 
     return summary
 
 def BARTsum(text):
     summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
-    summary_output = summarizer(text, max_length=70, min_length=30, do_sample=False)
+    summary_output = summarizer(text, max_length=50, min_length=30, do_sample=False)
     summary = summary_output[0]['summary_text']
 
     return summary
