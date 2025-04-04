@@ -16,7 +16,9 @@ def sdpipline(content, sumckpt, emockpt, mode = "plain", is_emodetect = True, is
   summary = content
   emotion = 'neutral'
   if is_summary == True:
+      print("summary")
       if mode.lower() == "plain":
+          print("BART")
           summary = BARTsum(content)
       elif mode.lower() == "dialogue":
           summary = diasum(sumckpt, content)
