@@ -15,5 +15,7 @@ Follow these steps to set up the project locally.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/emotion-detection-pipeline.git
-   cd emotion-detection-pipeline
+   git clone https://github.com/ShiqiZ1208/Emotion_diffusion_project.git
+   cd Emotion_diffusion_project
+    ```
+
