@@ -1,5 +1,6 @@
 import torch
 from transformers import AutoModelForSequenceClassification, AutoTokenizer, set_seed, pipeline, BartForConditionalGeneration, BartTokenizer
+from Model.Lora import BART_base_model, Lora_fine_tuning_BART, BERT_base_model, Lora_fine_tuning_BERT, custom_bart_loss
 import nltk
 
 seed = 0
