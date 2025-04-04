@@ -7,7 +7,6 @@ This project provides an emotion detection and text summarization pipeline built
 1. [Installation](#installation)
 2. [usage](#usage)
 3. [train](#train)
-4. [Contributing](#contributing)
 5. [License](#license)
 6. [Contact](#contact)
 
@@ -42,3 +41,18 @@ Follow these steps to set up the project locally.
    final_image, np_content_image, np_color_image = sdpipline(dialogue, sumckpt, emockpt, mode = "plain", is_color_transfer = False, is_emodetect = False) #no emo detection
    final_image, np_content_image, np_color_image = sdpipline(dialogue, sumckpt, emockpt, mode = "plain", is_color_transfer = False, is_Summary = False) #no summary
    ```
+## train
+
+1. Train GAN BART model, train with epoch of 1 batch_size of 5
+   ```bash
+   cd Emotion_diffusion_project/Model
+   python main.py -o train -b 5 -e 1 -save true -l false -mode GAN
+   ```
+2. Train Lora BART model, train with epoch of 1 batch_size of 5
+   ```bash
+   cd Emotion_diffusion_project/Model
+   python main.py -o train -b 5 -e 1 -save true -l false -mode BART
+   ```
+## License
+## contact
+1. Please send email to [zhang3t3@uwindsor.ca]
