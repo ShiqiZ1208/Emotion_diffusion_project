@@ -54,5 +54,6 @@ Follow these steps to set up the project locally.
    python main.py -o train -b 5 -e 1 -save true -l false -mode BART
    ```
 ## License
+1. This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 ## contact
 1. Please send email to [zhang3t3@uwindsor.ca]
