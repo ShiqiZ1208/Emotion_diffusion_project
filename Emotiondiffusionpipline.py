@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
+seed = 0
+torch.manual_seed(0)
 
 def sdpipline(content, sumckpt, emockpt, mode = "plain"):
   #with open(file_path, 'r') as file:
@@ -27,9 +29,10 @@ def sdpipline(content, sumckpt, emockpt, mode = "plain"):
   sd_model_id = "runwayml/stable-diffusion-v1-5"
   pipe = StableDiffusionPipeline.from_pretrained(sd_model_id, torch_dtype=torch.float16)
   pipe = pipe.to(device)
-
-  image = pipe(prompt, num_inference_steps=50, guidance_scale=7.5).images[0]
-  color = pipe(backcolor, num_inference_steps=50, guidance_scale=7.5).images[0]
+  
+  generator = torch.manual_seed(seed)
+  image = pipe(prompt, num_inference_steps=50, guidance_scale=7.5, generator=generator).images[0]
+  color = pipe(backcolor, num_inference_steps=50, guidance_scale=7.5, generator=generator).images[0]
 
   np_content_image = np.array(image)
   np_color_image = np.array(color)
