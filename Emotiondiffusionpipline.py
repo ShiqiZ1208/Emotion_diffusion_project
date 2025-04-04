@@ -36,7 +36,7 @@ def sdpipline(content, sumckpt, emockpt, mode = "plain", is_emodetect = True, is
     prompt = f"A emotion based painting that vividly captures the essence of '{summary}'."
 
   if is_color_transfer == True:
-    backcolor = "A background color express emotion of {emotion}"
+    backcolor = f"A background color express emotion of {emotion}"
 
   sd_model_id = "runwayml/stable-diffusion-v1-5"
   pipe = StableDiffusionPipeline.from_pretrained(sd_model_id, torch_dtype=torch.float16)
