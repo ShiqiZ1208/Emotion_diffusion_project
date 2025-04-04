@@ -1,5 +1,5 @@
 import argparse
-from Train import train_model, model_predict
+from Train import train_model
 from bart_train import Btrain_model
 import os
 
