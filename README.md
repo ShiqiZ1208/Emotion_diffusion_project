@@ -6,9 +6,10 @@ This project provides an emotion detection and text summarization pipeline built
 ## Table of Contents
 1. [Installation](#installation)
 2. [usage](#usage)
-3. [Contributing](#contributing)
-4. [License](#license)
-5. [Contact](#contact)
+3. [train](#train)
+4. [Contributing](#contributing)
+5. [License](#license)
+6. [Contact](#contact)
 
 ## Installation
 Follow these steps to set up the project locally.
@@ -33,4 +34,11 @@ Follow these steps to set up the project locally.
    sumckpt = "lora_bart1GAN_0_5.pth"
    emockpt = "Saved_Model"
    final_image, np_content_image, np_color_image = sdpipline(dialogue, sumckpt, emockpt, mode = "dialogue")
+   ```
+4. run with other option
+   ```bash
+   final_image, np_content_image, np_color_image = sdpipline(dialogue, sumckpt, emockpt, mode = "plain") #use BART model to summarize the dialogue
+   final_image, np_content_image, np_color_image = sdpipline(dialogue, sumckpt, emockpt, mode = "plain", is_color_transfer = False) # no color transfer
+   final_image, np_content_image, np_color_image = sdpipline(dialogue, sumckpt, emockpt, mode = "plain", is_color_transfer = False, is_emodetect = False) #no emo detection
+   final_image, np_content_image, np_color_image = sdpipline(dialogue, sumckpt, emockpt, mode = "plain", is_color_transfer = False, is_Summary = False) #no summary
    ```
