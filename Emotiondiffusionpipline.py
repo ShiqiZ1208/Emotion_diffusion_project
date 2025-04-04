@@ -2,7 +2,7 @@ import torch
 from diffusers import StableDiffusionPipeline
 from Emotion_detection import emodetect, diasum, BARTsum
 from color_transfer import lab_color_transfer
-from Model.Lora import Lora_fine_tuning_BART
+from Model.Lora import BART_base_model, Lora_fine_tuning_BART, BERT_base_model, Lora_fine_tuning_BERT, custom_bart_loss
 import matplotlib.pyplot as plt
 import numpy as np
 
